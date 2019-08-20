@@ -11,11 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+use Illuminate\Support\Facades\Route;
 
-Route::get('/about', function () {
-    $nama = 'Ferry Iqbal Rhamdani';
-    return view('about', ['nama' => $nama]);
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+// Route::get('/about', function () {
+//     $nama = 'Ferry Iqbal Rhamdani';
+//     return view('about', ['nama' => $nama]);
+// });
+
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
